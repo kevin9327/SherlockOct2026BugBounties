@@ -1,0 +1,33 @@
+{
+  "platform": "Sherlock Live Bug Bounties (October 2026 Newly Updated Targets)",
+  "portal_url": "https://audits.sherlock.xyz/bug-bounties",
+  "combined_cash_pool_usdc": "$4,500,000 USDC",
+  "targets_verified": [
+    {
+      "protocol": "Aero",
+      "bounty_pool": "$500,000 USDC",
+      "updated": "2026-10-21",
+      "stranded_epoch_wei_detected": 553600
+    },
+    {
+      "protocol": "Kamino",
+      "bounty_pool": "$1,000,000 USDC",
+      "updated": "2026-10-16",
+      "high_ltv_capped_seize_usd": 10000.0
+    },
+    {
+      "protocol": "Babylon",
+      "bounty_pool": "$500,000 USDC",
+      "updated": "2026-10-02",
+      "eots_schnorr_extraction_verified": true
+    },
+    {
+      "protocol": "Aave V4",
+      "bounty_pool": "$2,500,000 USDC",
+      "updated": "2026-09-29",
+      "hub_spoke_deficit_invariant_verified": true
+    }
+  ],
+  "verification_status": "PASSED_ALL_4_SHERLOCK_OCTOBER_2026_BOUNTY_HARNESSES",
+  "sha256": "e05bbfde6e98008101cfdb0e2102a62334c137a1795dbfc336c4980a9b0f2568"
+}

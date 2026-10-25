@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherlock Live Bug Bounties — October 2026 Newly Updated Targets ($4,500,000 USDC Pool)</title>
+  <style>
+    :root {
+      --bg: #090614;
+      --panel: #140e29;
+      --border: #322163;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --purple: #a855f7;
+      --cyan: #38bdf8;
+      --emerald: #34d399;
+      --gold: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 20% 0%, #24144a 0%, var(--bg) 60%);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem;
+    }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .hero {
+      background: linear-gradient(135deg, rgba(168,85,247,0.18), rgba(56,189,248,0.10));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.8rem;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(168,85,247,0.16);
+      color: #c084fc;
+      border: 1px solid rgba(168,85,247,0.5);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      margin-right: 0.4rem;
+    }
+    h1 { font-size: 1.85rem; line-height: 1.25; margin-bottom: 0.75rem; }
+    .subtitle { color: var(--muted); font-size: 0.96rem; margin-bottom: 1rem; }
+    .hero img { width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.15rem;
+    }
+    .metric .label { font-size: 0.76rem; color: var(--muted); text-transform: uppercase; }
+    .metric .val { font-size: 1.35rem; font-weight: 800; color: var(--emerald); margin-top: 0.25rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .card h2 { font-size: 1.12rem; color: var(--cyan); margin-bottom: 0.75rem; }
+    pre {
+      background: #06030d;
+      border: 1px solid #26174a;
+      border-radius: 10px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.80rem;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div>
+        <span class="badge">$4,500,000 USDC COMBINED POOL</span>
+        <span class="badge" style="color:var(--emerald);border-color:rgba(52,211,153,0.45);background:rgba(52,211,153,0.12);">OCTOBER 2026 UPDATED TARGETS</span>
+        <h1>Sherlock Live Bug Bounties — Aero, Kamino, Babylon &amp; Aave V4</h1>
+        <p class="subtitle">
+          Formal Invariant &amp; Edge-Case Security Harness for the 4 Newly Updated October 2026
+          Sherlock Live Bug Bounty Programs (<code>https://audits.sherlock.xyz/bug-bounties</code>).
+        </p>
+        <div style="font-size:0.82rem;color:var(--emerald);font-family:monospace;">
+          SHA-256: e05bbfde6e98008101cfdb0e2102a62334c137a1795dbfc336c4980a9b0f2568
+        </div>
+      </div>
+      <div>
+        <img src="banner.png" alt="Sherlock October 2026 Live Bug Bounties Banner" />
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="label">Aero (Oct 21, 2026)</div>
+        <div class="val">$500,000 USDC</div>
+      </div>
+      <div class="metric">
+        <div class="label">Kamino (Oct 16, 2026)</div>
+        <div class="val" style="color:var(--cyan);">$1,000,000 USDC</div>
+      </div>
+      <div class="metric">
+        <div class="label">Babylon (Oct 2, 2026)</div>
+        <div class="val" style="color:var(--gold);">$500,000 USDC</div>
+      </div>
+      <div class="metric">
+        <div class="label">Aave V4 (Sep 29, 2026)</div>
+        <div class="val">$2,500,000 USDC</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Aero ($500K) &amp; Kamino ($1M) Invariants</h2>
+        <pre>1. Aero (Updated Oct 21, 2026):
+   Ve(3,3) Gauge `notifyRewardAmount` integer division truncation
+   (`reward / DURATION`) strands up to `DURATION - 1` wei per epoch
+   unless rolled over into `rewardPerTokenStored` with 1e36 scaling.
+
+2. Kamino (Updated Oct 16, 2026):
+   Elevation-group cross-margin liquidation bonus cap when LTV &gt; 95.24%
+   (`debt * (1 + bonusBps) &gt; collateral`) must clamp seized collateral.</pre>
+      </div>
+      <div class="card">
+        <h2>Babylon ($500K) &amp; Aave V4 ($2.5M) Invariants</h2>
+        <pre>3. Babylon (Updated Oct 2, 2026):
+   Extractable One-Time Signature (EOTS) Schnorr nonce reuse extraction
+   `x = (s_1 - s_2) * (e_1 - e_2)^(-1) mod q` across forked BTC heights.
+
+4. Aave V4 (Updated Sep 29, 2026):
+   Unified Liquidity Hub-and-Spoke deficit elimination &amp; risk-premium
+   ray-math accounting invariant.</pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
